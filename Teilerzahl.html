@@ -1,0 +1,19 @@
+<html>
+<head>
+<script language="JavaScript">
+
+function teilerzahl(n)
+// berechnet die Anzahl der Teiler von n
+{ var hilf = 0;
+for (k=1 ; k <= n; k = k + 1)
+if (n % k == 0) hilf = hilf +1;
+return hilf;
+}
+document.write("<h1> Primzahlen bis 100</h1>");
+document.write("<blockquote>");
+for (n = 1; n <= 10000; n = n + 1)
+if (teilerzahl(n) == 2) document.write("<br>",n);
+
+</script>
+</head>
+</html>

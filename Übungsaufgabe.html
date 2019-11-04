@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Number guessing game</title>
+    <title>Integer Checker</title>
 
     <style>
         html {
@@ -26,113 +26,51 @@
 </head>
 
 <body>
-    <h1>Number guessing game</h1>
+    <h1>Integer Checker</h1>
 
-    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
-        if your guess was too high or too low.</p>
-
-    <div class="form">
-        <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
-        <input type="submit" value="Submit guess" class="guessSubmit">
-    </div>
-
-    <div class="resultParas">
-        <p class="guesses"></p>
-        <p class="lastResult"></p>
-        <p class="lowOrHi"></p>
-    </div>
 </body>
+
+
+
+
+
+
+
+
+
+
 
 <script>
 
-    //"use strict";
+    let num = 18;
 
-    function checkGuess() {
-        let userGuess = Number(guessField.value);
-        if (guessCount === 1) {
-            guesses.textContent = 'Previous guesses: ';
-        }
-        guesses.textContent += userGuess + ' ';
-        if (userGuess === randomNumber) {
-            lastResult.textContent = 'Congratulations! You got it right!';
-            lastResult.style.backgroundColor = 'green';
-            lowOrHi.textContent = '';
-            setGameOver();
-        } else if (guessCount === 10) {
-            lastResult.textContent = '!!!GAME OVER!!!';
-            setGameOver();
-        } else {
-            lastResult.textContent = 'Wrong!';
-            lastResult.style.backgroundColor = 'red';
-            if (userGuess < randomNumber) {
-                lowOrHi.textContent = 'Last guess was too low!';
-            } else if (userGuess > randomNumber) {
-                lowOrHi.textContent = 'Last guess was too high!';
+
+    function testIntegerFactors(number) {
+
+        let factors = [];
+
+        // console.log("Checking factors for number: ", number);
+
+        //Ganzzahl mit Math.floor
+        for (let i = Math.floor(number / 2); i > 1; i--) { //durch 17 und 1 muss nicht geteilt werden weil dies immer der Fall ist 
+
+            
+
+            //Prüfen, ob sich number durch i ganzzahlig teilen lässt.
+            //console.log("Diese Runde: " + i + ", Teilungsrest: ", number%i);
+
+            //wenn ja, ist i ein Teiler --> Array merken
+            if (number%i == 0) {
+                //console.log("Teilbar durch: "+ i)
+                factors.push(i); // Es wird ein Array gebildet, sodass jede neue Teilzahl dem Array hinzugefügt wird. Wird in einer Klammer geschrieben.
             }
         }
 
-        guessCount++;
-        guessField.value = '';
-        guessField.focus();
+        //console.log("Factors: ",factors) 
+        return factors; //return gibt den Wert factors aus
     }
 
-    function setGameOver() {
-        guessField.disabled = true;
-        guessSubmit.disabled = true;
-        resetButton = document.createElement('button');
-        resetButton.textContent = 'Start new game';
-        document.body.appendChild(resetButton);
-        resetButton.addEventListener('click', resetGame);
-    }
+    let intFactors = testIntegerFactors(num);
 
-    function resetGame() {
-        guessCount = 1;
-
-        const resetParas = document.querySelectorAll('.resultParas p');
-        for (let i = 0; i < resetParas.length; i++) {
-            resetParas[i].textContent = '';
-        }
-
-        resetButton.parentNode.removeChild(resetButton);
-
-        guessField.disabled = false;
-        guessSubmit.disabled = false;
-        guessField.value = '';
-        guessField.focus();
-
-        lastResult.style.backgroundColor = 'white';
-
-        randomNumber = Math.floor(Math.random() * 100) + 1;
-    }
-
-    function enterPressed(event){
-        if (event.keyCode===13) {
-        console.log("Event: ", event);
-        checkGuess();
-        }
-    }
-
-    let randomNumber = Math.floor(Math.random() * 100) + 1;
-
-    console.log("randomNumber: ", randomNumber);
-
-    const guesses = document.querySelector('.guesses');
-    const lastResult = document.querySelector('.lastResult');
-    const lowOrHi = document.querySelector('.lowOrHi');
-
-
-    const guessSubmit = document.querySelector('.guessSubmit');
-    const guessField = document.querySelector('.guessField');
-
-    console.log("Guess element ", guesses);
-
-    let guessCount = 1;
-    let resetButton;
-
-    // Eingabefeld kann durch klicken 
-    guessSubmit.addEventListener('click', checkGuess);
-    guessField.addEventListener('keyup', enterPressed);
-
+    console.log("Factors: ",intFactors);
 </script>
-
-</html>
