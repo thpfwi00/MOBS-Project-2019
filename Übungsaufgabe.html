@@ -28,39 +28,35 @@
 <body>
     <h1>Integer Checker</h1>
 
+    <p>BLABLABLA</p>
+
+    <div class="form">
+        <label for="enterField">Enter a number: </label><input type="text" id="enterField" class="enterField">
+        <input type="submit" value="Submit number" class="numberSubmit">
+    </div>
+
+    <p class="lastResult"></p>
+
 </body>
 
-
-
-
-
-
-
-
-
-
-
 <script>
-
-    let num = 18;
-
 
     function testIntegerFactors(number) {
 
         let factors = [];
 
-        // console.log("Checking factors for number: ", number);
+        console.log("Checking factors for number: ", number);
 
         //Ganzzahl mit Math.floor
         for (let i = Math.floor(number / 2); i > 1; i--) { //durch 17 und 1 muss nicht geteilt werden weil dies immer der Fall ist 
 
-            
+
 
             //Prüfen, ob sich number durch i ganzzahlig teilen lässt.
             //console.log("Diese Runde: " + i + ", Teilungsrest: ", number%i);
 
-            //wenn ja, ist i ein Teiler --> Array merken
-            if (number%i == 0) {
+            //wenn ja, ist i ein Teiler -> Array merken
+            if (number % i == 0) {
                 //console.log("Teilbar durch: "+ i)
                 factors.push(i); // Es wird ein Array gebildet, sodass jede neue Teilzahl dem Array hinzugefügt wird. Wird in einer Klammer geschrieben.
             }
@@ -68,9 +64,33 @@
 
         //console.log("Factors: ",factors) 
         return factors; //return gibt den Wert factors aus
+
+
     }
 
-    let intFactors = testIntegerFactors(num);
+    function checkNumber() {
+        let userNumber = parseInt(enterField.value);
 
-    console.log("Factors: ",intFactors);
+        console.log("Integer: ", userNumber)
+
+        let intFactors = testIntegerFactors(userNumber);
+
+        console.log("Factors: ", intFactors);
+    
+
+        enterField.value = '';
+        enterField.focus();
+    }
+
+
+
+
+    const numberSubmit = document.querySelector('.numberSubmit');
+    const enterField = document.querySelector('.enterField');
+
+    //Eingabefeld kann durch klicken 
+    numberSubmit.addEventListener('click', checkNumber);
 </script>
+
+
+</html>
