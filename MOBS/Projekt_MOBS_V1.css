@@ -1,0 +1,180 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 2em;
+    font-family: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+    grid-template-columns: auto;
+    grid-template-rows: 15% auto 10%;  
+    height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background: #333332cc;
+}
+
+main {
+    grid-area: main;
+    background: #c0c0c0;
+    padding: 50px;
+    display: grid;
+    grid-template-areas: "Geschwindigkeit Verbrauch Position Treibstoff" "Sperren Fenster Musik Navigation";
+    grid-template-columns: auto auto auto;
+    grid-template-rows:auto auto;
+    align-items:center;
+    justify-items:center;
+
+}
+
+img.TeslaLogo {
+    float: right;
+    width: 50px;
+    margin: 0.4em;
+}
+
+img.Geschwindigkeit {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Verbrauch {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Position{
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Treibstoff {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Sperren {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Fenster {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Musik {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+img.Navigation {
+    align-items:center;
+    justify-items:center;
+    max-width: 100%;
+    height: auto;
+    margin: 0.4em;
+}
+
+button.Geschwindigkeit {
+    grid-area: Geschwindigkeit;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Verbrauch {
+    grid-area: Verbrauch;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Position {
+    grid-area: Position;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Treibstoff {
+    grid-area: Treibstoff;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Sperren {
+    grid-area: Sperren;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Fenster {
+    grid-area: Fenster;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Musik {
+    grid-area: Musik;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Navigation {
+    grid-area: Navigation;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+
+footer {
+    grid-area: footer;
+    background: #333332cc;
+}
+
+#datum{
+    float: right;
+    padding: 20px;
+    color: blanchedalmond;
+}
+
+#uhr{
+    float: left;
+    padding: 20px; 
+    color: blanchedalmond;
+}
