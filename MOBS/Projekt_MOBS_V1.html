@@ -5,36 +5,40 @@
     <meta charset="utf-8">
     <title>Tesla Entertainmentsystem</title>
     <link rel="stylesheet" href="Projekt_MOBS_V1.css">
-    <script src="Projekt_MOBS_V1.js" defer></script> 
+    <script src="Projekt_MOBS_V1.js" defer></script>
 </head>
 
 <body>
 
     <header>
-        <button class="Home">
-            <img class="Home" src="Home.png"></img>
-        </button>
-
-        <img class="TeslaLogo" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
+        <button onclick="Home()">Home</button> 
+        <img class="TeslaLogo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
     </header>
 
     <main>
-        <!-- <div class="centerGrid" id="menuCenterContainer">
+        <div class="centerGrid" id="menuCenterContainer">
             <button class="Statusinformation">
                 <img class="Statusinformation" src="Tacho.png"></img>
             </button>
-            <button class="Sperren">
-                <img class="Sperren" src="Schloss.png"></img>
-            </button>
-
             <button class="Fenster">
                 <img class="Fenster" src="Fenster.png"></img>
             </button>
-
             <button class="Musik">
                 <img class="Musik" src="Musik.png"></img>
             </button>
-        </div> -->
+
+            <button class="Aufsperren">
+                <img class="aufsperren" src="Schloss.png"></img>
+            </button>
+
+            <button class="Absperren">
+                <img class="absperren" src="Schloss.png"></img>
+            </button>
+            <button class="Navigation">
+                <img class="Navigation" src="Navigation.png"></img>
+            </button>
+        </div>
     </main>
 
     <footer>
@@ -42,68 +46,50 @@
         <div id="uhr"></div>
     </footer>
 
-    <template id="home">
-    <div class="centerGrid" id="menuCenterContainer">
-        <button class="Statusinformation">
-            <img class="Statusinformation" src="Tacho.png"></img>
-        </button>
-        <button class="Sperren">
-            <img class="Sperren" src="Schloss.png"></img>
-        </button>
-
-        <button class="Fenster">
-            <img class="Fenster" src="Fenster.png"></img>
-        </button>
-
-        <button class="Musik">
-            <img class="Musik" src="Musik.png"></img>
-        </button>
-    </div>
-    </template>
-
     <template id="Daten">
-        <div class=Statusdaten>
-            Geschwindigkeit:
-        </div>
-        <div class=Statusdaten>
-            Aktuelle Position:
-        </div>
-        <div class=Statusdaten>
-            Verbrauch:
-        </div>
-        <div class=Statusdaten>
-            Resttreibstoff:
-        </div>
-        <div class=Statusdaten>
-                Resttreibstoff:
-        </div>
-
-    </template>
-
-    <template id="Verriegeln">
-        <div class="Tür auf">
-         Tür auf:
-        </div>
-        <div class="Tür zu">
-            Tür zu:
+        <div class="datenGrid" id="datenCenterContainer">
+            <div class=templateStatusdaten>
+                Geschwindigkeit:
+            </div>
+            <div class=templateStatusdaten>
+                Verbrauch:
+            </div>
+            <div class=templateStatusdaten>
+                Druck:
+            </div>
+            <div class=templateStatusdaten>
+                Temperatur:
+            </div>
+            <div class=templateStatusdaten>
+                Luftfeuchtigkeit:
+            </div>
         </div>
     </template>
+
 
     <template id="window">
+        <div class="fensterGrid" id="fensterCenterContainer">
+
             <div class="FensterRechts">
-             Rechtes Fenster auf:
+                <input type="submit" value="Rechtes Fenster">
             </div>
             <div class="FensterLinks">
-             Linkes Fenster auf:
+                <input type="submit" value="Linkes Fenster">
             </div>
-     </template>
+            <div class="FensterAlle">
+                <input type="submit" value="Alle Fenster">
+            </div>
+        </div>
+    </template>
 
-     <template id="music">
-            <div class="musicAuswahl">
-             Musik anzeigen:
+    <template id="music">
+        <div class="musicGrid" id="musicCenterContainer">
+            <div class="templateMusic">
+                Musik anzeigen:
             </div>
-     </template>
-     
+        </div>
+    </template>
+
 </body>
 
 </html>

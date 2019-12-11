@@ -25,12 +25,61 @@ main {
 
 div.centerGrid{
     display: grid;
-    grid-template-areas: "Statusinformation Sperren" "Fenster Musik";
+    grid-template-areas: "Statusinformation Aufsperren Absperren" "Fenster Musik Navigation";
     grid-template-columns: auto auto;
     grid-template-rows:auto auto;
     align-items:center;
     justify-items:center;
 }
+
+div.datenGrid{
+    display: grid;
+    grid-template-areas: "templateStatusdaten templateStatusdaten templateStatusdaten" "templateStatusdaten templateStatusdaten";
+    grid-template-columns: auto;
+    grid-template-rows:auto auto;
+    /* align-items:center;
+    justify-items:center; */
+}
+
+div.Statusinformation{
+    grid-area: templateStatusdaten;
+}
+
+div.fensterGrid{
+    display: grid;
+    grid-template-areas: "FensterLinks FensterRechts FensterAlle";
+    grid-template-columns: auto auto auto;
+    grid-template-rows:auto;
+    align-items:center;
+    justify-items:center;
+}
+
+div.FensterRechts{
+    grid-area: FensterRechts;
+}
+
+div.FensterLinks{
+    grid-area: FensterLinks;
+}
+
+div.FensterAlle{
+    grid-area: FensterAlle;
+}
+
+div.musicGrid{
+    display: grid;
+    grid-template-areas: "templateMusic";
+    grid-template-columns: auto;
+    grid-template-rows:auto;
+    align-items:center;
+    justify-items:center;
+}
+
+div.Musik{
+    grid-area: templateMusic;
+}
+
+
 
 img.TeslaLogo {
     float: right;
@@ -70,21 +119,6 @@ img.Musik {
     margin: 0.4em;
 }
 
-img.Home {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-button.Home {
-    margin: 5px;
-    padding: 10px;
-    height: 10vh; 
-    width: 10vh;
-}
-
 button.Statusinformation {
     grid-area: Statusinformation;
     margin: 5px;
@@ -116,7 +150,28 @@ button.Musik {
     height: 20vh; 
     width: 20vh;
 }
+button.Aufsperren {
+    grid-area: Aufsperren;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+button.Absperren {
+    grid-area: Absperren;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
 
+button.Navigation {
+    grid-area: Navigation;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
 footer {
     grid-area: footer;
     background: #333332cc;
