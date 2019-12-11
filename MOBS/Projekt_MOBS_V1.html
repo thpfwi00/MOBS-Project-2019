@@ -11,49 +11,99 @@
 <body>
 
     <header>
-        PfefferMobs Projekt 2019
+        <button class="Home">
+            <img class="Home" src="Home.png"></img>
+        </button>
+
         <img class="TeslaLogo" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
     </header>
 
     <main>
-            <button class="Geschwindigkeit">
-                <img class="Geschwindigkeit" src = "Tacho.png"></img>
+        <!-- <div class="centerGrid" id="menuCenterContainer">
+            <button class="Statusinformation">
+                <img class="Statusinformation" src="Tacho.png"></img>
             </button>
-
-            <button class="Verbrauch">
-                <img class="Verbrauch" src = "Verbrauch.png"></img>
-            </button>
-
-            <button class="Position">
-                    <img class="Position" src = "Position.png"></img>
-            </button>
-
-            <button class="Treibstoff">
-                <img class="Treibstoff" src = "Resttreibstoff.png"></img>
-            </button>
-
             <button class="Sperren">
-                <img class="Sperren" src = "Schloss.png"></img>
+                <img class="Sperren" src="Schloss.png"></img>
             </button>
 
             <button class="Fenster">
-                <img class="Fenster" src = "Fenster.png"></img>
-                </button>
+                <img class="Fenster" src="Fenster.png"></img>
+            </button>
 
             <button class="Musik">
-                    <img class="Musik" src = "Musik.png"></img>
+                <img class="Musik" src="Musik.png"></img>
             </button>
-
-            <button class="Navigation">
-                    <img class="Navigation" src = "Navigation.png"></img>
-            </button>
-
+        </div> -->
     </main>
 
     <footer>
         <div id="datum"></div>
         <div id="uhr"></div>
     </footer>
+
+    <template id="home">
+    <div class="centerGrid" id="menuCenterContainer">
+        <button class="Statusinformation">
+            <img class="Statusinformation" src="Tacho.png"></img>
+        </button>
+        <button class="Sperren">
+            <img class="Sperren" src="Schloss.png"></img>
+        </button>
+
+        <button class="Fenster">
+            <img class="Fenster" src="Fenster.png"></img>
+        </button>
+
+        <button class="Musik">
+            <img class="Musik" src="Musik.png"></img>
+        </button>
+    </div>
+    </template>
+
+    <template id="Daten">
+        <div class=Statusdaten>
+            Geschwindigkeit:
+        </div>
+        <div class=Statusdaten>
+            Aktuelle Position:
+        </div>
+        <div class=Statusdaten>
+            Verbrauch:
+        </div>
+        <div class=Statusdaten>
+            Resttreibstoff:
+        </div>
+        <div class=Statusdaten>
+                Resttreibstoff:
+        </div>
+
+    </template>
+
+    <template id="Verriegeln">
+        <div class="Tür auf">
+         Tür auf:
+        </div>
+        <div class="Tür zu">
+            Tür zu:
+        </div>
+    </template>
+
+    <template id="window">
+            <div class="FensterRechts">
+             Rechtes Fenster auf:
+            </div>
+            <div class="FensterLinks">
+             Linkes Fenster auf:
+            </div>
+     </template>
+
+     <template id="music">
+            <div class="musicAuswahl">
+             Musik anzeigen:
+            </div>
+     </template>
+     
 </body>
 
 </html>

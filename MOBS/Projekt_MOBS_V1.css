@@ -17,15 +17,19 @@ header {
 
 main {
     grid-area: main;
-    background: #c0c0c0;
+    background: #333332cc;
     padding: 50px;
+    align-items:center;
+    justify-items:center;
+}
+
+div.centerGrid{
     display: grid;
-    grid-template-areas: "Geschwindigkeit Verbrauch Position Treibstoff" "Sperren Fenster Musik Navigation";
-    grid-template-columns: auto auto auto;
+    grid-template-areas: "Statusinformation Sperren" "Fenster Musik";
+    grid-template-columns: auto auto;
     grid-template-rows:auto auto;
     align-items:center;
     justify-items:center;
-
 }
 
 img.TeslaLogo {
@@ -34,31 +38,7 @@ img.TeslaLogo {
     margin: 0.4em;
 }
 
-img.Geschwindigkeit {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Verbrauch {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Position{
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Treibstoff {
+img.Statusinformation {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -90,7 +70,7 @@ img.Musik {
     margin: 0.4em;
 }
 
-img.Navigation {
+img.Home {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -98,32 +78,15 @@ img.Navigation {
     margin: 0.4em;
 }
 
-button.Geschwindigkeit {
-    grid-area: Geschwindigkeit;
+button.Home {
     margin: 5px;
     padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+    height: 10vh; 
+    width: 10vh;
 }
 
-button.Verbrauch {
-    grid-area: Verbrauch;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Position {
-    grid-area: Position;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Treibstoff {
-    grid-area: Treibstoff;
+button.Statusinformation {
+    grid-area: Statusinformation;
     margin: 5px;
     padding: 10px;
     height: 20vh; 
@@ -148,14 +111,6 @@ button.Fenster {
 
 button.Musik {
     grid-area: Musik;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Navigation {
-    grid-area: Navigation;
     margin: 5px;
     padding: 10px;
     height: 20vh; 

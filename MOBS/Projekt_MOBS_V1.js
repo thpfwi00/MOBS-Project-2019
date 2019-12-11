@@ -45,3 +45,96 @@ function aktuelleUhrzeit(){
 }
  
 window.onload = aktuelleUhrzeit;
+
+//Zu Beginn "Home-Menü" anzeigen
+var h = document.getElementById('home');
+document.getElementsByTagName("main")[0].appendChild(h.content.cloneNode(true));
+
+
+//Klicken Statusinformation
+const ButtonStatus = document.querySelector('.Statusinformation');
+
+function ClickStatusinformation(){
+
+document.getElementById("menuCenterContainer").style.display="none";
+
+var d = document.getElementById('Daten');
+document.getElementsByTagName("main")[0].appendChild(d.content.cloneNode(true));
+
+
+// fetch('http://192.168.0.76:5000/status').then(function(response) {
+//   console.log(response);
+
+//   response.text().then(function(text){
+//       console.log(text);
+//       var array = text.split(',');
+//       var consumption = array[0](":");
+//       var humidity = array[1].substr(15, 6);
+//       var pressure = array[2].substr(15, 6);
+//       var speed = [3](":");
+//       var temp = [4].substr(12, 4);
+
+//       document.getElementsByClassName("Statusdaten")[0].append(speed[1] + "kmh");
+//       document.getElementsByClassName("Statusdaten")[1].append(consumption[1] + "l");
+//       document.getElementsByClassName("Statusdaten")[2].append(pressure + "Pa");
+//       document.getElementsByClassName("Statusdaten")[3].append(temp + "°C");
+//       document.getElementsByClassName("Statusdaten")[4].append(humidity[1] + "g/m^3");
+
+//     });
+//   });
+}
+
+ButtonStatus.addEventListener('click', ClickStatusinformation);
+
+//Klicken Sperren
+const ButtonSperren = document.querySelector('.Sperren');
+
+function ClickSperren(){
+document.getElementById("menuCenterContainer").style.display="none";
+
+var v = document.getElementById('Verriegeln');
+document.getElementsByTagName("main")[0].appendChild(v.content.cloneNode(true));
+}
+
+ButtonSperren.addEventListener('click', ClickSperren);
+
+//Klicken Fenster
+const ButtonFenster = document.querySelector('.Fenster');
+
+function ClickFenster(){
+document.getElementById("menuCenterContainer").style.display="none";
+
+var w = document.getElementById('window');
+document.getElementsByTagName("main")[0].appendChild(w.content.cloneNode(true));
+}
+
+ButtonFenster.addEventListener('click', ClickFenster);
+
+//Klicken Musik
+const ButtonMusik = document.querySelector(".Musik");
+
+function ClickMusik(){
+document.getElementById("menuCenterContainer").style.display="none";
+
+var m = document.getElementById('music');
+document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
+}
+
+ButtonMusik.addEventListener('click', ClickMusik);
+
+//Klicken HomeButton
+const ButtonHome = document.querySelector(".Home");
+
+function ClickHome(){
+let mainElement = document.querySelector('main');
+mainElement.innerHTML = '';
+
+// document.getElementById("menuCenterContainer").style.display="initial";
+// document.getElementById("menuCenterContainer").style.display="none";
+
+var h = document.getElementById('home');
+document.getElementsByTagName("main")[0].appendChild(h.content.cloneNode(true));
+}
+
+ButtonHome.addEventListener('click', ClickHome);
+
