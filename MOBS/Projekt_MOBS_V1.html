@@ -11,31 +11,31 @@
 <body>
 
     <header>
-        <button onclick="Home()">Home</button> 
+        <button id="home">Home</button> 
         <img class="TeslaLogo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
     </header>
 
     <main>
         <div class="centerGrid" id="menuCenterContainer">
-            <button class="Statusinformation">
+            <button class="Statusinformation" id="StatusinformationID">
                 <img class="Statusinformation" src="Tacho.png"></img>
             </button>
-            <button class="Fenster">
+            <button class="Fenster" id="FensterID">
                 <img class="Fenster" src="Fenster.png"></img>
             </button>
-            <button class="Musik">
+            <button class="Musik" id="MusikID">
                 <img class="Musik" src="Musik.png"></img>
             </button>
 
-            <button class="Aufsperren">
+            <button class="Aufsperren" id="AufsperrenID">
                 <img class="aufsperren" src="Schloss.png"></img>
             </button>
 
-            <button class="Absperren">
+            <button class="Absperren" id="AbsperrenID">
                 <img class="absperren" src="Schloss.png"></img>
             </button>
-            <button class="Navigation">
+            <button class="Navigation" id="NavigationID">
                 <img class="Navigation" src="Navigation.png"></img>
             </button>
         </div>
@@ -45,6 +45,34 @@
         <div id="datum"></div>
         <div id="uhr"></div>
     </footer>
+
+    <template id="Home">
+            <main>
+                    <div class="centerGrid" id="menuCenterContainer">
+                        <button class="Statusinformation" id="StatusinformationID">
+                            <img class="Statusinformation" src="Tacho.png"></img>
+                        </button>
+                        <button class="Fenster" id="FensterID">
+                            <img class="Fenster" src="Fenster.png"></img>
+                        </button>
+                        <button class="Musik" id="MusikID">
+                            <img class="Musik" src="Musik.png"></img>
+                        </button>
+            
+                        <button class="Aufsperren" id="AufsperrenID">
+                            <img class="aufsperren" src="Schloss.png"></img>
+                        </button>
+            
+                        <button class="Absperren" id="AbsperrenID">
+                            <img class="absperren" src="Schloss.png"></img>
+                        </button>
+                        <button class="Navigation" id="NavigationID">
+                            <img class="Navigation" src="Navigation.png"></img>
+                        </button>
+                    </div>
+                </main>
+    </template>
+
 
     <template id="Daten">
         <div class="datenGrid" id="datenCenterContainer">
@@ -90,6 +118,9 @@
         </div>
     </template>
 
-</body>
+    <template id="navi">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d84278.02477972793!2d9.623368640950268!3d48.69232429391882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1576085616097!5m2!1sde!2sde" width="1500" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </template>
 
+</body>
 </html>

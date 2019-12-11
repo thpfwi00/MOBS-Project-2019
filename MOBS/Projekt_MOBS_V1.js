@@ -47,9 +47,49 @@ function aktuelleUhrzeit() {
 window.onload = aktuelleUhrzeit;
 
 
-//Klicken Statusinformation
-const ButtonStatus = document.querySelector('.Statusinformation');
+function handleHeaderClick(event) {
 
+  switch (event.target.id) {
+
+      case 'home':
+          ClickHome();
+          break;
+
+  }
+}
+
+  function handleMainClick(event) {
+
+    switch (event.target.id) {
+
+    case 'StatusinformationID':
+      ClickStatusinformation();
+      break;
+
+    case 'AufsperrenID':
+      ClickAuf();
+      break;
+
+    case 'AbsperrenID':
+      ClickZu();
+    break;
+
+    case 'FensterID':
+      ClickFenster();
+    break;
+
+    case 'MusikID':
+      ClickMusik();
+    break;
+
+    case 'NavigationID':
+      ClickNavi();
+    break;
+    }
+}
+
+
+//Klicken Statusinformation
 function ClickStatusinformation() {
 
   document.getElementById("menuCenterContainer").style.display = "none";
@@ -81,12 +121,7 @@ function ClickStatusinformation() {
     });
 }
 
-ButtonStatus.addEventListener('click', ClickStatusinformation);
-
-
 //Klicken Fenster
-const ButtonFenster = document.querySelector('.Fenster');
-
 function ClickFenster() {
   document.getElementById("menuCenterContainer").style.display = "none";
 
@@ -94,11 +129,7 @@ function ClickFenster() {
   document.getElementsByTagName("main")[0].appendChild(w.content.cloneNode(true));
 }
 
-ButtonFenster.addEventListener('click', ClickFenster);
-
 //Klicken Musik
-const ButtonMusik = document.querySelector(".Musik");
-
 function ClickMusik() {
   document.getElementById("menuCenterContainer").style.display = "none";
 
@@ -106,31 +137,34 @@ function ClickMusik() {
   document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
 }
 
-ButtonMusik.addEventListener('click', ClickMusik);
-
 //Klicken Tür auf
-const ButtonAuf= document.querySelector(".Aufsperren");
-
 function ClickAuf() {
   fetch('http://192.168.0.76:5000/action/unlock')
   .then(console.log('done'));
 }
 
-ButtonAuf.addEventListener('click', ClickAuf);
-
 //Klicken Tür zu
-const ButtonZu= document.querySelector(".Absperren");
-
 function ClickZu() {
   fetch('http://192.168.0.76:5000/action/lock')
   .then(console.log('done'));
 }
 
-ButtonZu.addEventListener('click', ClickZu);
+//Klicken Navigation
+function ClickNavi() {
+document.getElementById("menuCenterContainer").style.display = "none";
 
-
-function Home(){
-  let mainElement = document.querySelector('main');
-
-  mainElement.innerHTML = '';
+var n = document.getElementById('navi');
+document.getElementsByTagName("main")[0].appendChild(n.content.cloneNode(true));
 }
+
+//Klick Home
+function ClickHome() {
+  let mainElement = document.querySelector('main');
+  mainElement.innerHTML = '';
+  
+  var h = document.getElementById('Home');
+  document.getElementsByTagName("main")[0].appendChild(h.content.cloneNode(true));
+  }
+
+document.querySelector('main').addEventListener('click', handleMainClick);
+document.querySelector('header').addEventListener('click', handleHeaderClick);
