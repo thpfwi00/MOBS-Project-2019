@@ -11,44 +11,32 @@
 <body>
 
     <header>
-        PfefferMobs Projekt 2019
+        <button id="home">Home</button>
         <img class="TeslaLogo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
-        <div class="returnButton" id="returnButton" type="Button"></div>
     </header>
 
     <main>
         <div class="centerGrid" id="menuCenterContainer">
-            <button class="Geschwindigkeit">
-                <img class="Geschwindigkeit" src="Tacho.png"></img>
+            <button class="Statusinformation" id="StatusinformationID">
+                <img id="IMGInfo" src="Tacho.png"></img>
+            </button>
+            <button class="Fenster" id="FensterID">
+                <img id="IMGFenster" src="Fenster.png"></img>
+            </button>
+            <button class="Musik" id="MusikID">
+                <img id="IMGMusik" src="Musik.png"></img>
             </button>
 
-            <button class="Verbrauch" id="Verbrauch">
-                <img class="Verbrauch" src="Verbrauch.png"></img>
+            <button class="Aufsperren" id="AufsperrenID">
+                <img id="IMGAufsperren" src="Schloss.png"></img>
             </button>
 
-            <button class="Position">
-                <img class="Position" src="Position.png"></img>
+            <button class="Absperren" id="AbsperrenID">
+                <img id="IMGAbsperren" src="Schloss.png"></img>
             </button>
-
-            <button class="Treibstoff">
-                <img class="Treibstoff" src="Resttreibstoff.png"></img>
-            </button>
-
-            <button class="Sperren">
-                <img class="Sperren" src="Schloss.png"></img>
-            </button>
-
-            <button class="Fenster">
-                <img class="Fenster" src="Fenster.png"></img>
-            </button>
-
-            <button class="Musik">
-                <img class="Musik" src="Musik.png"></img>
-            </button>
-
-            <button class="Navigation">
-                <img class="Navigation" src="Navigation.png"></img>
+            <button class="Navigation" id="NavigationID">
+                <img id="IMGNavigation" src="Navigation.png"></img>
             </button>
         </div>
     </main>
@@ -58,43 +46,98 @@
         <div id="uhr"></div>
     </footer>
 
-    <template class="home">
+    <template id="Home">
+        <div class="centerGrid" id="menuCenterContainer">
+            <button class="Statusinformation" id="StatusinformationID">
+                <img id="IMGInfo" src="Tacho.png"></img>
+            </button>
+            <button class="Fenster" id="FensterID">
+                <img id="IMGFenster" src="Fenster.png"></img>
+            </button>
+            <button class="Musik" id="MusikID">
+                <img id="IMGMusik" src="Musik.png"></img>
+            </button>
 
-        <button class="Statusinformation">
-            <img class="Statusinformation" src="Tacho.png"></img>
-        </button>
-        <button class="Sperren">
-            <img class="Sperren" src="Schloss.png"></img>
-        </button>
+            <button class="Aufsperren" id="AufsperrenID">
+                <img id="IMGAufsperren" src="Schloss.png"></img>
+            </button>
 
-        <button class="Fenster">
-            <img class="Fenster" src="Fenster.png"></img>
-        </button>
-
-        <button class="Musik">
-            <img class="Musik" src="Musik.png"></img>
-        </button>
-
-    </template>
-
-    <template class="Statusinformation">
-
-        <div class="Geschwindigkeit">
-        </div>
-        <div class="Position">
-        </div>
-        <div class="Verbrauch">
-        </div>
-        <div class="Resttreibstoff"></div>
-
-    </template>
-
-    <template id="Sperren">
-        <div class="Tür auf">
-        </div>
-        <div class="Tür zu">
+            <button class="Absperren" id="AbsperrenID">
+                <img id="IMGAbsperren" src="Schloss.png"></img>
+            </button>
+            <button class="Navigation" id="NavigationID">
+                <img id="IMGNavigation" src="Navigation.png"></img>
+            </button>
         </div>
     </template>
+
+
+    <template id="Daten">
+        <div class="datenGrid" id="datenCenterContainer">
+            <div class=templateStatusdaten>
+                Geschwindigkeit:
+            </div>
+            <div class=templateStatusdaten>
+                Verbrauch:
+            </div>
+            <div class=templateStatusdaten>
+                Druck:
+            </div>
+            <div class=templateStatusdaten>
+                Temperatur:
+            </div>
+            <div class=templateStatusdaten>
+                Luftfeuchtigkeit:
+            </div>
+        </div>
+    </template>
+
+
+    <template id="window">
+
+        <img src="https://www.tesla.com/sites/default/files/model3-new/compare/compare_model3_center.png">
+        <div class="fensterGrid" id="fensterCenterContainer">
+            <button id="LinkesFensterAuf">
+                Linkes Fenster - Öffnen
+            </button>
+            <button id="LinkesFensterZu">
+                Linkes Fenster - Schließen
+            </button>
+            <button id="RechtesFensterAuf">
+                Rechtes Fenster - Öffnen
+            </button>
+            <button id="RechtesFensterZu">
+                Rechtes Fenster - Schließen
+            </button>
+            <button id="AlleFensterAuf">
+                Fenster - Öffnen
+            </button>
+            <button id="AlleFensterZu">
+                Fenster - Schließen
+            </button>
+
+        </div>
+    </template>
+
+    <template id="music">
+        <div class="musicGrid" id="musicCenterContainer">
+            <div class="templateMusic">
+                <table>
+                    <tr>
+                        <th>Artist</th>
+                        <th>Titel</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </template>
+
+    <template id="navi">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d84278.02477972793!2d9.623368640950268!3d48.69232429391882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1576085616097!5m2!1sde!2sde"
+            width="1500" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </template>
+
 </body>
 
 </html>

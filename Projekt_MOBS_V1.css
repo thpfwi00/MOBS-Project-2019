@@ -17,18 +17,69 @@ header {
 
 main {
     grid-area: main;
-    background: #c0c0c0;
+    background: #333332cc;
     padding: 50px;
     align-items:center;
     justify-items:center;
-
 }
+
 div.centerGrid{
     display: grid;
-    grid-template-areas: "Geschwindigkeit Verbrauch Position Treibstoff" "Sperren Fenster Musik Navigation";
-    grid-template-columns: auto auto auto;
+    grid-template-areas: "Statusinformation Aufsperren Absperren" "Fenster Musik Navigation";
+    grid-template-columns: auto auto;
     grid-template-rows:auto auto;
+    align-items:center;
+    justify-items:center;
 }
+
+div.datenGrid{
+    display: grid;
+    grid-template-areas: "templateStatusdaten templateStatusdaten templateStatusdaten" "templateStatusdaten templateStatusdaten";
+    grid-template-columns: auto;
+    grid-template-rows:auto auto;
+    /* align-items:center;
+    justify-items:center; */
+}
+
+div.Statusinformation{
+    grid-area: templateStatusdaten;
+}
+
+div.fensterGrid{
+    display: grid;
+    grid-template-areas: "FensterLinks FensterRechts FensterAlle";
+    grid-template-columns: auto auto auto;
+    grid-template-rows:auto;
+    align-items:center;
+    justify-items:center;
+}
+
+div.FensterRechts{
+    grid-area: FensterRechts;
+}
+
+div.FensterLinks{
+    grid-area: FensterLinks;
+}
+
+div.FensterAlle{
+    grid-area: FensterAlle;
+}
+
+div.musicGrid{
+    display: grid;
+    grid-template-areas: "templateMusic";
+    grid-template-columns: auto;
+    grid-template-rows:auto;
+    align-items:center;
+    justify-items:center;
+}
+
+div.Musik{
+    grid-area: templateMusic;
+}
+
+
 
 img.TeslaLogo {
     float: right;
@@ -36,7 +87,7 @@ img.TeslaLogo {
     margin: 0.4em;
 }
 
-img.Geschwindigkeit {
+#IMGInfo {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -44,7 +95,7 @@ img.Geschwindigkeit {
     margin: 0.4em;
 }
 
-img.Verbrauch {
+img.IMGAbsperren {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -52,7 +103,7 @@ img.Verbrauch {
     margin: 0.4em;
 }
 
-img.Position{
+img.IMGFenster {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -60,7 +111,7 @@ img.Position{
     margin: 0.4em;
 }
 
-img.Treibstoff {
+img.IMGMusik {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -68,64 +119,8 @@ img.Treibstoff {
     margin: 0.4em;
 }
 
-img.Sperren {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Fenster {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Musik {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-img.Navigation {
-    align-items:center;
-    justify-items:center;
-    max-width: 100%;
-    height: auto;
-    margin: 0.4em;
-}
-
-button.Geschwindigkeit {
-    grid-area: Geschwindigkeit;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Verbrauch {
-    grid-area: Verbrauch;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Position {
-    grid-area: Position;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-
-button.Treibstoff {
-    grid-area: Treibstoff;
+button.Statusinformation {
+    grid-area: Statusinformation;
     margin: 5px;
     padding: 10px;
     height: 20vh; 
@@ -155,6 +150,20 @@ button.Musik {
     height: 20vh; 
     width: 20vh;
 }
+button.Aufsperren {
+    grid-area: Aufsperren;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
+button.Absperren {
+    grid-area: Absperren;
+    margin: 5px;
+    padding: 10px;
+    height: 20vh; 
+    width: 20vh;
+}
 
 button.Navigation {
     grid-area: Navigation;
@@ -163,7 +172,6 @@ button.Navigation {
     height: 20vh; 
     width: 20vh;
 }
-
 footer {
     grid-area: footer;
     background: #333332cc;
@@ -179,8 +187,4 @@ footer {
     float: left;
     padding: 20px; 
     color: blanchedalmond;
-}
-
-div.centerGrid{
-    display:none;
 }
