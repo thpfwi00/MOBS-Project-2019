@@ -87,7 +87,7 @@ img.TeslaLogo {
     margin: 0.4em;
 }
 
-img.Statusinformation {
+#IMGInfo {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -95,7 +95,7 @@ img.Statusinformation {
     margin: 0.4em;
 }
 
-img.Sperren {
+img.IMGAbsperren {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -103,7 +103,7 @@ img.Sperren {
     margin: 0.4em;
 }
 
-img.Fenster {
+img.IMGFenster {
     align-items:center;
     justify-items:center;
     max-width: 100%;
@@ -111,7 +111,7 @@ img.Fenster {
     margin: 0.4em;
 }
 
-img.Musik {
+img.IMGMusik {
     align-items:center;
     justify-items:center;
     max-width: 100%;

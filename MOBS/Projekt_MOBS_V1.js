@@ -51,41 +51,65 @@ function handleHeaderClick(event) {
 
   switch (event.target.id) {
 
-      case 'home':
-          ClickHome();
-          break;
+    case 'home':
+      ClickHome();
+      break;
 
   }
 }
 
-  function handleMainClick(event) {
+function handleMainClick(event) {
 
-    switch (event.target.id) {
+  switch (event.target.id) {
 
     case 'StatusinformationID':
+    case 'IMGInfo':
       ClickStatusinformation();
       break;
 
     case 'AufsperrenID':
+    case 'IMGAufsperren':
       ClickAuf();
       break;
 
     case 'AbsperrenID':
+    case 'IMGAbsperren':
       ClickZu();
-    break;
+      break;
 
     case 'FensterID':
+    case 'IMGFenster':
       ClickFenster();
-    break;
+      break;
 
     case 'MusikID':
+    case 'IMGMusik':
       ClickMusik();
-    break;
+      break;
 
     case 'NavigationID':
+    case 'IMGNavigation':
       ClickNavi();
-    break;
-    }
+      break;
+
+    case 'LinkesFensterAuf':
+    case 'RechtesFensterAuf':
+      ClickOpen();
+      break;
+
+    case 'LinkesFensterZu':
+    case 'RechtesFensterZu':
+      ClickClose();
+      break;
+
+    case 'AlleFensterAuf':
+      ClickOpenAll();
+      break;
+
+    case 'AlleFensterZu':
+      ClickCloseAll();
+      break;
+  }
 }
 
 
@@ -97,12 +121,11 @@ function ClickStatusinformation() {
   var d = document.getElementById('Daten');
   document.getElementsByTagName("main")[0].appendChild(d.content.cloneNode(true));
 
-
-  "use Strict";
-
-  fetch('http://192.168.0.76:5000/status').then(function(response) {
-          response.text().then(function(text) {
-                  console.log(text);
+  window.setInterval(function () {
+    "use Strict";
+    fetch('http://192.168.0.76:5000/status').then(function (response) {
+      response.text().then(function (text) {
+        console.log(text);
 
         var array = text.split(',');
         var consumption = array[0].split(":");
@@ -119,7 +142,9 @@ function ClickStatusinformation() {
         document.getElementsByClassName("templateStatusdaten")[4].append(humidity[1] + " g/m^3");
       });
     });
+  }, 1000);
 }
+
 
 //Klicken Fenster
 function ClickFenster() {
@@ -129,42 +154,88 @@ function ClickFenster() {
   document.getElementsByTagName("main")[0].appendChild(w.content.cloneNode(true));
 }
 
-//Klicken Musik
-function ClickMusik() {
-  document.getElementById("menuCenterContainer").style.display = "none";
+// //Klicken Musik
+// function ClickMusik() {
+//   document.getElementById("menuCenterContainer").style.display = "none";
 
-  var m = document.getElementById('music');
-  document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
-}
+//   var m = document.getElementById('music');
+//   document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
+
+//   fetch('http://192.168.0.76:5000/music').then(function (response) {
+//     response.text().then(function (text) {
+//       console.log(text);
+
+//       var array = text.split(',');
+//       var Artist1 = array[0].split(":");
+//       var Artist2 = array[1].substr(15, 6);
+//       var Artist3 = array[2].substr(15, 6);
+//       var Title 1 = array[3].split(":");
+//       var Title 2 = array[4].substr(12, 4);
+//       var Title 3 = array[4].substr(12, 4);
+
+
+//       // document.getElementsByClassName("templateStatusdaten")[0].append(speed[1] + " kmh");
+//       // document.getElementsByClassName("templateStatusdaten")[1].append(consumption[1] + " l");
+//       // document.getElementsByClassName("templateStatusdaten")[2].append(pressure + " Pa");
+//       // document.getElementsByClassName("templateStatusdaten")[3].append(temp + " °C");
+//       // document.getElementsByClassName("templateStatusdaten")[4].append(humidity[1] + " g/m^3");
+//     });
+//   });
+// }
+
 
 //Klicken Tür auf
 function ClickAuf() {
   fetch('http://192.168.0.76:5000/action/unlock')
-  .then(console.log('done'));
+    .then(console.log('done'));
 }
 
 //Klicken Tür zu
 function ClickZu() {
   fetch('http://192.168.0.76:5000/action/lock')
-  .then(console.log('done'));
+    .then(console.log('done'));
 }
 
 //Klicken Navigation
 function ClickNavi() {
-document.getElementById("menuCenterContainer").style.display = "none";
+  document.getElementById("menuCenterContainer").style.display = "none";
 
-var n = document.getElementById('navi');
-document.getElementsByTagName("main")[0].appendChild(n.content.cloneNode(true));
+  var n = document.getElementById('navi');
+  document.getElementsByTagName("main")[0].appendChild(n.content.cloneNode(true));
 }
 
 //Klick Home
 function ClickHome() {
   let mainElement = document.querySelector('main');
   mainElement.innerHTML = '';
-  
+
   var h = document.getElementById('Home');
   document.getElementsByTagName("main")[0].appendChild(h.content.cloneNode(true));
-  }
+}
+
+//Klicken Fenster Auf 
+function ClickOpen() {
+  fetch('http://192.168.0.76:5000/window/open')
+    .then(console.log('done'));
+}
+
+//Klicken Fenster Zu
+function ClickClose() {
+  fetch('http://192.168.0.76:5000/window/close')
+    .then(console.log('done'));
+}
+
+//Klicken Alle Fenster Auf 
+function ClickOpenAll() {
+  fetch('http://192.168.0.76:5000/windowall/openAll')
+    .then(console.log('done'));
+}
+//Klicken Alle Fenster Zu
+function ClickCloseAll() {
+  fetch('http://192.168.0.76:5000/windowall/closeAll')
+    .then(console.log('done'));
+}
+
 
 document.querySelector('main').addEventListener('click', handleMainClick);
 document.querySelector('header').addEventListener('click', handleHeaderClick);

@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <button id="home">Home</button> 
+        <button id="home">Home</button>
         <img class="TeslaLogo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tesla_Motors.svg/1200px-Tesla_Motors.svg.png"></img>
     </header>
@@ -19,24 +19,24 @@
     <main>
         <div class="centerGrid" id="menuCenterContainer">
             <button class="Statusinformation" id="StatusinformationID">
-                <img class="Statusinformation" src="Tacho.png"></img>
+                <img id="IMGInfo" src="Tacho.png"></img>
             </button>
             <button class="Fenster" id="FensterID">
-                <img class="Fenster" src="Fenster.png"></img>
+                <img id="IMGFenster" src="Fenster.png"></img>
             </button>
             <button class="Musik" id="MusikID">
-                <img class="Musik" src="Musik.png"></img>
+                <img id="IMGMusik" src="Musik.png"></img>
             </button>
 
             <button class="Aufsperren" id="AufsperrenID">
-                <img class="aufsperren" src="Schloss.png"></img>
+                <img id="IMGAufsperren" src="Schloss.png"></img>
             </button>
 
             <button class="Absperren" id="AbsperrenID">
-                <img class="absperren" src="Schloss.png"></img>
+                <img id="IMGAbsperren" src="Schloss.png"></img>
             </button>
             <button class="Navigation" id="NavigationID">
-                <img class="Navigation" src="Navigation.png"></img>
+                <img id="IMGNavigation" src="Navigation.png"></img>
             </button>
         </div>
     </main>
@@ -47,30 +47,28 @@
     </footer>
 
     <template id="Home">
-            <main>
-                    <div class="centerGrid" id="menuCenterContainer">
-                        <button class="Statusinformation" id="StatusinformationID">
-                            <img class="Statusinformation" src="Tacho.png"></img>
-                        </button>
-                        <button class="Fenster" id="FensterID">
-                            <img class="Fenster" src="Fenster.png"></img>
-                        </button>
-                        <button class="Musik" id="MusikID">
-                            <img class="Musik" src="Musik.png"></img>
-                        </button>
-            
-                        <button class="Aufsperren" id="AufsperrenID">
-                            <img class="aufsperren" src="Schloss.png"></img>
-                        </button>
-            
-                        <button class="Absperren" id="AbsperrenID">
-                            <img class="absperren" src="Schloss.png"></img>
-                        </button>
-                        <button class="Navigation" id="NavigationID">
-                            <img class="Navigation" src="Navigation.png"></img>
-                        </button>
-                    </div>
-                </main>
+        <div class="centerGrid" id="menuCenterContainer">
+            <button class="Statusinformation" id="StatusinformationID">
+                <img id="IMGInfo" src="Tacho.png"></img>
+            </button>
+            <button class="Fenster" id="FensterID">
+                <img id="IMGFenster" src="Fenster.png"></img>
+            </button>
+            <button class="Musik" id="MusikID">
+                <img id="IMGMusik" src="Musik.png"></img>
+            </button>
+
+            <button class="Aufsperren" id="AufsperrenID">
+                <img id="IMGAufsperren" src="Schloss.png"></img>
+            </button>
+
+            <button class="Absperren" id="AbsperrenID">
+                <img id="IMGAbsperren" src="Schloss.png"></img>
+            </button>
+            <button class="Navigation" id="NavigationID">
+                <img id="IMGNavigation" src="Navigation.png"></img>
+            </button>
+        </div>
     </template>
 
 
@@ -96,31 +94,50 @@
 
 
     <template id="window">
-        <div class="fensterGrid" id="fensterCenterContainer">
 
-            <div class="FensterRechts">
-                <input type="submit" value="Rechtes Fenster">
-            </div>
-            <div class="FensterLinks">
-                <input type="submit" value="Linkes Fenster">
-            </div>
-            <div class="FensterAlle">
-                <input type="submit" value="Alle Fenster">
-            </div>
+        <img src="https://www.tesla.com/sites/default/files/model3-new/compare/compare_model3_center.png">
+        <div class="fensterGrid" id="fensterCenterContainer">
+            <button id="LinkesFensterAuf">
+                Linkes Fenster - Öffnen
+            </button>
+            <button id="LinkesFensterZu">
+                Linkes Fenster - Schließen
+            </button>
+            <button id="RechtesFensterAuf">
+                Rechtes Fenster - Öffnen
+            </button>
+            <button id="RechtesFensterZu">
+                Rechtes Fenster - Schließen
+            </button>
+            <button id="AlleFensterAuf">
+                Fenster - Öffnen
+            </button>
+            <button id="AlleFensterZu">
+                Fenster - Schließen
+            </button>
+
         </div>
     </template>
 
     <template id="music">
         <div class="musicGrid" id="musicCenterContainer">
             <div class="templateMusic">
-                Musik anzeigen:
+                <table>
+                    <tr>
+                        <th>Artist</th>
+                        <th>Titel</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </template>
 
     <template id="navi">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d84278.02477972793!2d9.623368640950268!3d48.69232429391882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1576085616097!5m2!1sde!2sde" width="1500" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d84278.02477972793!2d9.623368640950268!3d48.69232429391882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1576085616097!5m2!1sde!2sde"
+            width="1500" height="500" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
     </template>
 
 </body>
+
 </html>
