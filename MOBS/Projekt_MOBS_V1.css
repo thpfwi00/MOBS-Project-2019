@@ -170,7 +170,7 @@ div.datenGrid{
 div.geschwindigkeit{
     grid-area: geschwindigkeit;
     font-size: 50px;
-    color: #333332cc;
+    color:white;
 }
 div.verbrauch{
     grid-area: verbrauch;
