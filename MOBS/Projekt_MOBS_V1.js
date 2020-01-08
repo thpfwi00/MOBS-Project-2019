@@ -52,6 +52,7 @@ function handleHeaderClick(event) {
   switch (event.target.id) {
 
     case 'home':
+    case 'IMGHome':
       ClickHome();
       break;
 
@@ -123,7 +124,7 @@ function ClickStatusinformation() {
 
   window.setInterval(function () {
     "use Strict";
-    fetch('http://192.168.0.76:5000/status').then(function (response) {
+    fetch('http://192.168.178.170:5000/status').then(function (response) {
       response.text().then(function (text) {
         console.log(text);
 
@@ -134,16 +135,17 @@ function ClickStatusinformation() {
         var speed = array[3].split(":");
         var temp = array[4].substr(12, 4);
 
-
-        document.getElementsByClassName("templateStatusdaten")[0].append(speed[1] + " kmh");
-        document.getElementsByClassName("templateStatusdaten")[1].append(consumption[1] + " l");
-        document.getElementsByClassName("templateStatusdaten")[2].append(pressure + " Pa");
-        document.getElementsByClassName("templateStatusdaten")[3].append(temp + " °C");
-        document.getElementsByClassName("templateStatusdaten")[4].append(humidity[1] + " g/m^3");
+        document.getElementsByClassName("templateStatusdaten")[0].innerHTML(speed[1] + " kmh");
+        document.getElementsByClassName("templateStatusdaten")[1].innerHTML(consumption[1] + " l");
+        document.getElementsByClassName("templateStatusdaten")[2].innerHTML(pressure + " Pa");
+        document.getElementsByClassName("templateStatusdaten")[3].innerHTML(temp + " °C");
+        document.getElementsByClassName("templateStatusdaten")[4].innerHTML(humidity[1] + " g/m^3");
       });
     });
-  }, 1000);
+ }, 1000);
 }
+
+
 
 
 //Klicken Fenster
@@ -155,44 +157,36 @@ function ClickFenster() {
 }
 
 // //Klicken Musik
-// function ClickMusik() {
-//   document.getElementById("menuCenterContainer").style.display = "none";
+function ClickMusik() {
+  document.getElementById("menuCenterContainer").style.display = "none";
 
-//   var m = document.getElementById('music');
-//   document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
+  var m = document.getElementById('music');
+  document.getElementsByTagName("main")[0].appendChild(m.content.cloneNode(true));
 
-//   fetch('http://192.168.0.76:5000/music').then(function (response) {
-//     response.text().then(function (text) {
-//       console.log(text);
+  fetch('http://192.168.178.170:5000/music')
+  .then(response => response.json() )
+  .then (function (musicList) {
+      console.log("musicList: ", musicList);
+      console.log("Titel 2. Lied: ", musicList[0].title);
 
-//       var array = text.split(',');
-//       var Artist1 = array[0].split(":");
-//       var Artist2 = array[1].substr(15, 6);
-//       var Artist3 = array[2].substr(15, 6);
-//       var Title 1 = array[3].split(":");
-//       var Title 2 = array[4].substr(12, 4);
-//       var Title 3 = array[4].substr(12, 4);
+      document.getElementsByClassName("Musikliste")[0].append(musicList[0].artist, " ", musicList[0].title)
+      document.getElementsByClassName("Musikliste")[1].append(musicList[1].artist, " ",  musicList[1].title)
+      document.getElementsByClassName("Musikliste")[2].append(musicList[2].artist, " ", musicList[2].title)
 
 
-//       // document.getElementsByClassName("templateStatusdaten")[0].append(speed[1] + " kmh");
-//       // document.getElementsByClassName("templateStatusdaten")[1].append(consumption[1] + " l");
-//       // document.getElementsByClassName("templateStatusdaten")[2].append(pressure + " Pa");
-//       // document.getElementsByClassName("templateStatusdaten")[3].append(temp + " °C");
-//       // document.getElementsByClassName("templateStatusdaten")[4].append(humidity[1] + " g/m^3");
-//     });
-//   });
-// }
+  });
+}
 
 
 //Klicken Tür auf
 function ClickAuf() {
-  fetch('http://192.168.0.76:5000/action/unlock')
+  fetch('http://192.168.178.170:5000/action/unlock')
     .then(console.log('done'));
 }
 
 //Klicken Tür zu
 function ClickZu() {
-  fetch('http://192.168.0.76:5000/action/lock')
+  fetch('http://192.168.178.170:5000/action/lock')
     .then(console.log('done'));
 }
 
@@ -215,24 +209,24 @@ function ClickHome() {
 
 //Klicken Fenster Auf 
 function ClickOpen() {
-  fetch('http://192.168.0.76:5000/window/open')
+  fetch('http://192.168.178.170:5000/window/open')
     .then(console.log('done'));
 }
 
 //Klicken Fenster Zu
 function ClickClose() {
-  fetch('http://192.168.0.76:5000/window/close')
+  fetch('http://192.168.178.170:5000/window/close')
     .then(console.log('done'));
 }
 
 //Klicken Alle Fenster Auf 
 function ClickOpenAll() {
-  fetch('http://192.168.0.76:5000/windowall/openAll')
+  fetch('http://192.168.178.170:5000/windowall/openAll')
     .then(console.log('done'));
 }
 //Klicken Alle Fenster Zu
 function ClickCloseAll() {
-  fetch('http://192.168.0.76:5000/windowall/closeAll')
+  fetch('http://192.168.178.170:5000/windowall/closeAll')
     .then(console.log('done'));
 }
 

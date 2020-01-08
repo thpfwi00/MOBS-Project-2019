@@ -21,70 +21,91 @@ main {
     padding: 50px;
     align-items:center;
     justify-items:center;
+    background-size: 100%;
 }
 
-div.centerGrid{
-    display: grid;
-    grid-template-areas: "Statusinformation Aufsperren Absperren" "Fenster Musik Navigation";
-    grid-template-columns: auto auto;
-    grid-template-rows:auto auto;
-    align-items:center;
-    justify-items:center;
+footer {
+    grid-area: footer;
+    background: #333332cc;
 }
-
-div.datenGrid{
-    display: grid;
-    grid-template-areas: "templateStatusdaten templateStatusdaten templateStatusdaten" "templateStatusdaten templateStatusdaten";
-    grid-template-columns: auto;
-    grid-template-rows:auto auto;
-    /* align-items:center;
-    justify-items:center; */
-}
-
-div.Statusinformation{
-    grid-area: templateStatusdaten;
-}
-
-div.fensterGrid{
-    display: grid;
-    grid-template-areas: "FensterLinks FensterRechts FensterAlle";
-    grid-template-columns: auto auto auto;
-    grid-template-rows:auto;
-    align-items:center;
-    justify-items:center;
-}
-
-div.FensterRechts{
-    grid-area: FensterRechts;
-}
-
-div.FensterLinks{
-    grid-area: FensterLinks;
-}
-
-div.FensterAlle{
-    grid-area: FensterAlle;
-}
-
-div.musicGrid{
-    display: grid;
-    grid-template-areas: "templateMusic";
-    grid-template-columns: auto;
-    grid-template-rows:auto;
-    align-items:center;
-    justify-items:center;
-}
-
-div.Musik{
-    grid-area: templateMusic;
-}
-
-
 
 img.TeslaLogo {
     float: right;
     width: 50px;
     margin: 0.4em;
+}
+
+#home {
+    float: middle;
+    background: none;
+    padding: 20px;
+    border-style: none;
+}
+
+#datum{
+    float: right;
+    padding: 20px;
+    color: blanchedalmond;
+}
+
+#uhr{
+    float: left;
+    padding: 20px; 
+    color: blanchedalmond;
+}
+
+button.Statusinformation {
+    grid-area: Statusinformation;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Sperren {
+    grid-area: Sperren;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Fenster {
+    grid-area: Fenster;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Musik {
+    grid-area: Musik;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+button.Aufsperren {
+    grid-area: Aufsperren;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+button.Absperren {
+    grid-area: Absperren;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
+}
+
+button.Navigation {
+    grid-area: Navigation;
+    background: none;
+    border: none;
+    height: 20vh; 
+    width: 20vh;
 }
 
 #IMGInfo {
@@ -119,72 +140,170 @@ img.IMGMusik {
     margin: 0.4em;
 }
 
-button.Statusinformation {
-    grid-area: Statusinformation;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+img.Zurück {
+    align-items:center;
+    justify-items:center;
+    width: 50px;
+    margin: 0.4em;
 }
 
-button.Sperren {
-    grid-area: Sperren;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+div.centerGrid{
+    display: grid;
+    grid-template-areas: "Statusinformation Aufsperren Absperren" 
+                         "Fenster           Musik      Navigation";
+    grid-template-columns: auto auto auto;
+    grid-template-rows:auto auto;
+    align-items:center;
+    justify-items:center;
 }
 
-button.Fenster {
-    grid-area: Fenster;
+div.datenGrid{
+    display: grid;
+    grid-template-areas: 
+                            "geschwindigkeit geschwindigkeit"
+                            "verbrauch       druck"
+                            "temperatur      luftfeuchtigkeit ";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 200px 200px;
+} 
+
+div.geschwindigkeit{
+    grid-area: geschwindigkeit;
+    font-size: 50px;
+    color: #333332cc;
+}
+div.verbrauch{
+    grid-area: verbrauch;
+    padding: 5px;
     margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+    color: white;
+    background:#333332cc;
+}
+div.druck{
+    grid-area: druck;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+}
+div.temperatur{
+    grid-area: temperatur;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+}
+div.luftfeuchtigkeit{
+    grid-area: luftfeuchtigkeit;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
 }
 
-button.Musik {
-    grid-area: Musik;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-button.Aufsperren {
-    grid-area: Aufsperren;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
-}
-button.Absperren {
-    grid-area: Absperren;
-    margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+
+div.fensterGrid{
+    display: grid;
+    grid-template-areas:
+                            "LinkesFensterAuf LinkesFensterZu . RechtesFensterAuf RechtesFensterZu"
+                            ".                .               . .                 ."
+                            "AlleFensterAuf   AlleFensterZu   . .                 ."; 
+    grid-template-columns: 15% 15% 40% 15% 15%; 
+    grid-template-rows: 200px 1fr 200px; 
+
 }
 
-button.Navigation {
-    grid-area: Navigation;
+#LinkesFensterAuf{
+    grid-area: LinkesFensterAuf;
+    padding: 5px;
     margin: 5px;
-    padding: 10px;
-    height: 20vh; 
-    width: 20vh;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
 }
-footer {
-    grid-area: footer;
+ 
+#LinkesFensterZu{
+    grid-area: LinkesFensterZu;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
+}
+
+#RechtesFensterAuf{
+    grid-area: RechtesFensterAuf;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
+}
+
+#RechtesFensterZu{
+    grid-area: RechtesFensterZu;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
+}
+
+#AlleFensterAuf{
+    grid-area: AlleFensterAuf;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
+}
+#AlleFensterZu{
+    grid-area: AlleFensterZu;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    background:#333332cc;
+    font-size:30px;
+}
+
+
+
+div.musicGrid {
+    display: grid;
+    grid-template-areas:
+                            "IMGMusic audioMusic"
+                            "IMGMusic selectMusic"; 
+    grid-template-columns: 50% 50%; 
+    grid-template-rows: 200px 200px; 
+    grid-auto-flow: column; 
+}
+
+img.IMGMusic {
+    grid-area: IMGMusic;
+    align-content: flex-end;
+    justify-content: flex-end;    
+} 
+
+div.audioMusic {
+    grid-area: audioMusic;
+} 
+
+div.selectMusic {
+    grid-area: selectMusic;
+} 
+
+select {
+    font-size: 30px;
+    color: blanchedalmond;
     background: #333332cc;
+
+}
+audio {
+    size: 30px;
 }
 
-#datum{
-    float: right;
-    padding: 20px;
-    color: blanchedalmond;
-}
-
-#uhr{
-    float: left;
-    padding: 20px; 
-    color: blanchedalmond;
-}
